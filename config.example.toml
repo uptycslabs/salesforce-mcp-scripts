@@ -30,8 +30,9 @@ wait = 20
 publish_wait = 10
 
 # Optional: how to handle components removed in the new version.
-# One of: "deprecate-only", "mixed", "delete-only". Omit to use sf defaults.
-# upgrade_type = "mixed"
+# One of: "DeprecateOnly", "Mixed", "Delete" (per `sf package install --help`).
+# Omit to use sf defaults.
+# upgrade_type = "Mixed"
 
 # Optional: API access for the installed package.
 # One of: "AllUsers", "AdminsOnly". Omit to use sf defaults.

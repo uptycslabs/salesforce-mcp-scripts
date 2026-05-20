@@ -53,11 +53,17 @@ authenticated locally — no credentials are stored in config.
 ## Usage
 
 Dry run — shows the package and orgs the script would touch without
-calling `sf`:
+running `sf package install`:
 
 ```sh
 python3 install_package.py --config config.toml --dry-run
 ```
+
+Dry run still requires the `sf` CLI on your `PATH` and calls
+`sf org list` to warn about config entries that aren't authenticated
+locally. It just stops short of invoking `sf package install`. If you
+need to validate a config on a machine without `sf` installed, copy it
+to a machine that has the CLI authenticated against the target orgs.
 
 Real run:
 

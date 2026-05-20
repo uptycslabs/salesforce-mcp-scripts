@@ -24,7 +24,7 @@ except ModuleNotFoundError:
     )
 
 
-VALID_UPGRADE_TYPES = {"deprecate-only", "mixed", "delete-only"}
+VALID_UPGRADE_TYPES = {"DeprecateOnly", "Mixed", "Delete"}
 
 
 @dataclass
@@ -132,7 +132,12 @@ def main() -> int:
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Print what would be installed, then exit.",
+        help=(
+            "Print what would be installed, then exit without running "
+            "`sf package install`. Still requires the `sf` CLI on PATH and "
+            "queries `sf org list` to warn about orgs that aren't "
+            "authenticated locally."
+        ),
     )
     args = parser.parse_args()
 

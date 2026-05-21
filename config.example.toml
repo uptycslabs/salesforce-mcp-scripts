@@ -1,0 +1,39 @@
+# Salesforce 2GP multi-org install config.
+# Copy this file to `config.toml` and edit values for your rollout.
+
+# Target orgs. Each entry can be an alias, the username, or the org id —
+# anything `sf` accepts via `--target-org`. The orgs must already be
+# authenticated via `sf org login web` / `sf org login jwt`.
+#
+# NOTE: `orgs` is a top-level key and must appear BEFORE the [package]
+# table below, otherwise TOML will scope it as `package.orgs`.
+orgs = [
+  "prod-org-alias",
+  "qa.user@example.com.qa",
+  "00D1A0000000000XYZ",
+]
+
+[package]
+# Required: 2GP package version id (starts with "04t...") OR a package alias
+# defined in your project's sfdx-project.json.
+version_id = "04t1A0000000000XXX"
+
+# Optional: installation key, if the package version was built with one.
+# Leave as "" or remove the line if not needed.
+installation_key = ""
+
+# Optional: minutes to wait for the install to finish (default 20).
+wait = 20
+
+# Optional: minutes to wait for the Subscriber Package Version to become
+# available to the target org (default 10).
+publish_wait = 10
+
+# Optional: how to handle components removed in the new version.
+# One of: "DeprecateOnly", "Mixed", "Delete" (per `sf package install --help`).
+# Omit to use sf defaults.
+# upgrade_type = "Mixed"
+
+# Optional: API access for the installed package.
+# One of: "AllUsers", "AdminsOnly". Omit to use sf defaults.
+# security_type = "AdminsOnly"

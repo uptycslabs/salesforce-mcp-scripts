@@ -5,18 +5,18 @@
 # anything `sf` accepts via `--target-org`. The orgs must already be
 # authenticated via `sf org login web` / `sf org login jwt`.
 #
+# To view all authenticated orgs use: `sf org list --all`
+#
 # NOTE: `orgs` is a top-level key and must appear BEFORE the [package]
 # table below, otherwise TOML will scope it as `package.orgs`.
-orgs = [
-  "prod-org-alias",
-  "qa.user@example.com.qa",
-  "00D1A0000000000XYZ",
-]
+# Example: orgs = ["prod-org-alias", "qa.user@example.com.qa", "00D1A0000000000XYZ"]
+orgs = []
 
 [package]
-# Required: 2GP package version id (starts with "04t...") OR a package alias
-# defined in your project's sfdx-project.json.
-version_id = "04t1A0000000000XXX"
+# Required: 2GP package version id (starts with "04t..."). If you don't have one, please
+# ask the vendor whose app you want to install to provide one.
+# Example: version_id = "04t1A0000000000XXX"
+version_id = ""
 
 # Optional: installation key, if the package version was built with one.
 # Leave as "" or remove the line if not needed.

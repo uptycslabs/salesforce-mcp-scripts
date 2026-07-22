@@ -14,7 +14,7 @@ orgs = []
 
 [package]
 # Required: 2GP package version id (starts with "04t..."). If you don't have one, please
-# ask the vendor whose app you want to install to provide one.
+# ask the vendor whose app you are installing to provide one.
 # Example: version_id = "04t1A0000000000XXX"
 version_id = ""
 

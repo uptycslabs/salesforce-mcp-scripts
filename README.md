@@ -39,8 +39,10 @@ authenticated locally — no credentials are stored in config.
    ```
 
 4. Edit `config.toml`:
-   - `[package].version_id` — the `04t...` Subscriber Package Version Id
-     (or a package alias defined in your `sfdx-project.json`).
+   - `[package].version_id` - Default value in .config.example already set to
+     Uptycs Production package. It represents the `04t...`
+     Subscriber Package Version Id (or a package alias defined in your
+     `sfdx-project.json`).
    - `[package].installation_key` — only if the package version was
      built with an installation key.
    - `orgs` — a list of org identifiers. Each entry may be an **alias**,
